@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".SignUpActivity">
+<!-- kita membuat action barnya gak secara manual, arena kita buat
+ di activity jadi tinggal bisa merubah warnanya -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:elevation="0dp">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            android:id="@+id/tbSignUp"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="20dp">
+                <!-- Text Sign Up -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sign_up"
+                android:textSize="24sp"
+                android:layout_marginBottom="20dp"
+                android:textStyle="bold"/>
+                <!-- Input Email -->
+            <EditText
+                android:id="@+id/etEmailSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edit_text"
+                android:hint="@string/email"
+                android:paddingStart="32dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:paddingEnd="16dp"
+                android:layout_marginBottom="20dp"
+                android:inputType="textEmailAddress"
+                android:autofillHints="@string/email"/>
+                <!-- Input Password -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/Primary"
+                app:hintEnabled="false"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="20dp">
+
+                <EditText
+                    android:id="@+id/etPasswordSignUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edit_text"
+                    android:paddingStart="32dp"
+                    android:paddingTop="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="16dp"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:autofillHints="@string/password" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+                <!-- Input Confirm Password -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/Primary"
+                app:hintEnabled="false"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="36dp"
+                android:id="@+id/LOConfirmPass">
+
+                <EditText
+                    android:id="@+id/etConfirmPassSignUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edit_text"
+                    android:hint="@string/confirm_password"
+                    android:inputType="textPassword"
+                    android:paddingStart="32dp"
+                    android:paddingTop="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="16dp"
+                    android:autofillHints="@string/confirm_password" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+                <!-- Button Sign Up -->
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_btn_primary"
+                android:text="@string/sign_up"
+                android:textColor="@color/white"
+                android:id="@+id/btn_signUp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
